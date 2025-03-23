@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayhan Bozkurt - Kişisel Web Sayfası</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f3f2ef;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0a66c2;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #004182;
+            text-decoration: underline;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .profile-header {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #0a66c2;
+            background-color: #e0f0ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-right: 30px;
+        }
+        
+        .profile-img span {
+            font-size: 64px;
+            color: #0a66c2;
+        }
+        
+        .profile-info {
+            flex: 1;
+        }
+        
+        .profile-name {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .profile-name h1 {
+            margin-right: 15px;
+            font-size: 28px;
+            color: #000;
+        }
+        
+        .verification-badge {
+            background-color: #0a66c2;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .verification-badge svg {
+            margin-right: 5px;
+        }
+        
+        .profile-tagline {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .brand-name {
+            color: #0a66c2;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .profile-location {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile-location svg {
+            margin-right: 8px;
+        }
+        
+        .profile-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .profile-btn {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .profile-btn.primary {
+            background-color: #0a66c2;
+            color: white;
+            border: none;
+        }
+        
+        .profile-btn.primary:hover {
+            background-color: #004182;
+            text-decoration: none;
+        }
+        
+        .profile-btn.secondary {
+            border: 1px solid #0a66c2;
+            color: #0a66c2;
+            background-color: transparent;
+        }
+        
+        .profile-btn.secondary:hover {
+            background-color: rgba(10, 102, 194, 0.1);
+            text-decoration: none;
+        }
+        
+        .profile-btn svg {
+            margin-right: 8px;
+        }
+        
+        .stats {
+            display: flex;
+            margin-top: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .stats-item {
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        
+        .stats-item:hover {
+            color: #0a66c2;
+            text-decoration: underline;
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .profile-img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .profile-links {
+                justify-content: center;
+            }
+        }
+        
+        /* Section Styles */
+        .section {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .section-title svg {
+            margin-right: 10px;
+        }
+        
+        /* About Section */
+        .about-content {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .experience-item:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #0a66c2;
+        }
+        
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .experience-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .experience-company {
+            font-weight: 600;
+            color: #0a66c2;
+            margin-bottom: 5px;
+        }
+        
+        .experience-date {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .experience-description {
+            font-size: 14px;
+        }
+        
+        /* Education Section */
+        .education-item {
+            margin-bottom: 20px;
+        }
+        
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .education-school {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .education-degree {
+            font-weight: normal;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .education-date {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        /* Certification Section */
+        .cert-item {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+        
+        .cert-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .cert-logo {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            margin-right: 15px;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .cert-logo span {
+            font-size: 20px;
+            color: #0a66c2;
+        }
+        
+        .cert-info {
+            flex-grow: 1;
+        }
+        
+        .cert-name {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        
+        .cert-issuer {
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+        
+        .cert-date {
+            font-size: 13px;
+            color: #666;
+        }
+        
+        /* Activity Section */
+        .activity-item {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .activity-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .activity-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .activity-user {
+            font-weight: 600;
+            font-size: 15px;
+            margin-right: 5px;
+        }
+        
+        .activity-date {
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .activity-content {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .activity-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .activity-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .activity-action {
+            font-size: 13px;
+            color: #666;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        
+        .activity-action:hover {
+            color: #0a66c2;
+        }
+        
+        .activity-action svg {
+            margin-right: 5px;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar-section {
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .sidebar-content {
+            font-size: 14px;
+        }
+        
+        /* Skills Section */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background-color: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #666;
+            margin-top: 30px;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Loader and Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px;
+        }
+        
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #0a66c2;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container fade-in">
+        <!-- Header/Profile Section -->
+        <header>
+            <div class="profile-header">
+                <div class="profile-img">
+                    <span>AB</span>
+                </div>
+                <div class="profile-info">
+                    <div class="profile-name">
+                        <h1>Ayhan Bozkurt</h1>
+                        <div class="verification-badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            Doğrulanmış
+                        </div>
+                    </div>
+                    <p class="profile-tagline">Educator | Author | Artificial Intelligence | Generative AI | LLMs</p>
+                    <span class="brand-name">ai'han</span>
+                    <div class="profile-location">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Ankara, Türkiye
+                    </div>
+                    <div class="profile-links">
+                        <a href="#" class="profile-btn primary" id="contactBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            İletişim Bilgisi
+                        </a>
+                        <a href="#" class="profile-btn secondary" id="websiteBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            Web Sayfamı İnceleyin
+                        </a>
+                    </div>
+                    <div class="stats">
+                        <div class="stats-item">1,583 takipçi</div>
+                        <div class="stats-item">500+ bağlantı</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- About Section -->
+                <section class="section">
+                    <h2 class="section-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        Hakkında
+                    </h2>
+                    <div class="about-content">
+                        <p>Ayhan Bozkurt, 1984 yılında Karadeniz Ereğli / Zonguldak'ta doğdu. Bilgi ve Belge Yönetimi alanında başarılı bir akademisyen ve profesyoneldir. 2002 yılında Kdz. Ereğli Anadolu Lisesi'nden mezun oldu. Ardından, Ankara Üniversitesi'nin saygın Dil, Tarih ve Coğrafya Fakültesi'nde lisans eğitimini tamamlayarak 2006 yılında Bilgi ve Belge Yönetimi bölümünden mezun oldu.</p>
+                        <br>
+                        <p>2017 yılında, Sakarya Üniversitesi'nden Eğitim Programları ve Öğretim alanında yüksek lisans derecesini aldı. "Kütüphane Eğitiminde Oyunlaştırma Kullanımı ve Öğrencilerin Oyunlaştırma Hakkındaki Görüşleri" başlıklı araştırma projesi oldukça takdir topladı.</p>
+                        <br>
+                        <p>Profesyonel kariyerine 2007 yılında Sabancı Üniversitesi Bilgi Merkezi'nde başladı. 2008 yılında Özyeğin Üniversitesi'ne geçiş yaparak, Referans Uzmanı olarak önemli bir rol üstlendi. Bu görevinde, Üniversite Kütüphanesi içindeki eğitim programlarını yönetmektedir.</p>
+                        <br>
+                        <p>Ayhan Bozkurt ve yayınları hakkında daha fazla bilgi için: <a href="https://www.kitapyurdu.com/yazar/ayhan-bozkurt/260288.html" target="_blank">Kitapyurdu</a> | <a href="https://medium.com/@ayhanbzkrt" target="_blank">Medium</a> | <a href="https://github.com/ayhanbzkrt" target="_blank">Github</a></p>
+                    </div>
+                </section>
+                
+                <!-- Experience Section -->
+                <section class="section">
+                    <h2 class="section-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                        Deneyim
+                    </h2>
+                    <div class="experience-list">
+                        <div class="experience-item">
+                            <h3 class="experience-title">pip install ai'han</h3>
+                            <div class="experience-company">ai'han</div>
+                            <div class="experience-date">Ekim 2019 - Günümüz · 5 yıl 6 ay</div>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <h3 class="experience-title">Misafir Öğretim Görevlisi</h3>
+                            <div class="experience-company">Ankara Yıldırım Beyazıt Üniversitesi</div>
+                            <div class="experience-date">Eylül 2020 - Şubat 2021 · 6 ay</div>
+                            <div class="experience-description">"Elektronik Yayıncılık" ve "Bilgi Erişim Sistemleri" başlıklı 2 ders verdi.</div>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <h3 class="experience-title">Fakülte Kütüphanecisi</h3>
+                            <div class="experience-company">Özyeğin Üniversitesi</div>
+                            <div class="experience-date">Temmuz 2008 - Ekim 2019 · 11 yıl 4 ay</div>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <h3 class="experience-title">Referans Uzmanı</h3>
+                            <div class="experience-company">Özyeğin Üniversitesi Kütüphanesi (İstanbul)</div>
+                            <div class="experience-date">Temmuz 2008 - Temmuz 2019 · 11 yıl 1 ay</div>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <h3 class="experience-title">Kütüphaneci</h3>
+                            <div class="experience-company">Sabancı Üniversitesi Bilgi Merkezi</div>
+                            <div class="experience-date">2007 - 2008 · 1 yıl</div>
+                            <div class="experience-description">Kütüphane destek görevlisi</div>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <h3 class="experience-title">Yarı Zamanlı Kütüphane Asistanı</h3>
+                            <div class="experience-company">Ankara Üniversitesi</div>
+                            <div class="experience-date">2003 - 2006 · 3 yıl</div>
+                            <div class="experience-description">Ankara, Türkiye</div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Education Section -->
+                <section class="section">
+                    <h2 class="section-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                        </svg>
+                        Eğitim
+                    </h2>
+                    <div class="education-list">
+                        <div class="education-item">
+                            <h3 class="education-school">Sakarya Üniversitesi</h3>
+                            <div class="education-degree">Eğitim Programları ve Öğretim</div>
+                            <div class="education-date">2015 - 2017</div>
+                        </div>
+                        
+                        <div class="education-item">
+                            <h3 class="education-school">Ankara Üniversitesi</h3>
+                            <div class="education-degree">Bilgi ve Belge Yönetimi</div>
+                            <div class="education-date">2002 - 2006</div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Recent Activity Section -->
+                <section class="section">
+                    <h2 class="section-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                        Aktivite
+                    </h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-header">
+                                <span class="activity-user">Ayhan Bozkurt</span>
+                                <span class="activity-date">• 1 gün önce</span>
+                            </div>
+                            <div class="activity-content">
+                                <p>Yeni bir sertifika aldığımı paylaşmaktan mutluluk duyuyorum: Coursera'dan IBM AI Engineering Professional Certificate (V3)!</p>
+                            </div>
+                            <div class="activity-actions">
+                                <div class="activity-action">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3z"></path>
+                                    </svg>
+                                    Beğen
+                                </div>
+                                <div class="activity-action">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                                    </svg>
+                                    Yorum Yap
+                                </div>
+                                <div class="activity-action">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="18" cy="5" r="3"></circle>
+                                        <circle cx="6" cy="12" r="3"></circle>
+                                        <circle cx="18" cy="19" r="3"></circle>
+                                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                    </svg>
+                                    Paylaş
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-header">
+                                <span class="activity-user">Ayhan Bozkurt</span>
+                                <span class="activity-date">• 1 gün önce</span>
+                            </div>
+                            <div class="activity-content">
+                                <p>Coursera'dan doğrulanmış başarımı görüntüleyin.</p>
+                                <p>IBM AI Engineering Professional Certificate (V3), Coursera tarafından Ayhan Bozkurt'a verildi.</p>
+                            </div>
+                            <div class="activity-actions">
+                                <div class="activity-action">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3z"></path>
+                                    </svg>
+                                    Beğen
+                                </div>
+                                <div class="activity-action">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                                    </svg>
+                                    Yorum Yap
+                                </div>
+                                <div class="activity-action">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="18" cy="5" r="3"></circle>
+                                        <circle cx="6" cy="12" r="3"></circle>
+                                        <circle cx="18" cy="19" r="3"></circle>
+                                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                    </svg>
+                                    Paylaş
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Right Column / Sidebar -->
+            <div class="right-column">
+                <!-- Certifications Section -->
+                <section class="section">
+                    <h2 class="section-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        Sertifikalar
+                    </h2>
+                    <div class="cert-list">
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>IBM</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">IBM AI Engineering Professional Certificate (V3)</div>
+                                <div class="cert-issuer">Coursera</div>
+                                <div class="cert-date">Mar 2025</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>IBM</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Deep Learning with PyTorch</div>
+                                <div class="cert-issuer">IBM</div>
+                                <div class="cert-date">Feb 2025</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>IBM</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Fundamentals of AI Agents Using RAG and LangChain</div>
+                                <div class="cert-issuer">IBM</div>
+                                <div class="cert-date">Jan 2025</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>IBM</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Gen AI Foundational Models for NLP & Language Understanding</div>
+                                <div class="cert-issuer">IBM</div>
+                                <div class="cert-date">Jan 2025</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>IBM</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Generative AI Language Modeling with Transformers</div>
+                                <div class="cert-issuer">IBM</div>
+                                <div class="cert-date">Jan 2025</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>IBM</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Generative AI and LLMs: Architecture and Data Preparation</div>
+                                <div class="cert-issuer">IBM</div>
+                                <div class="cert-date">Jan 2025</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>DL</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Introduction to Generative AI for Software Development</div>
+                                <div class="cert-issuer">DeepLearning.AI</div>
+                                <div class="cert-date">Dec 2024</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>DL</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Team Software Engineering with AI</div>
+                                <div class="cert-issuer">DeepLearning.AI</div>
+                                <div class="cert-date">Dec 2024</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>UM</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Understanding Data: Navigating Statistics, Science, and AI Specialization</div>
+                                <div class="cert-issuer">University of Michigan</div>
+                                <div class="cert-date">Sep 2024</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>DL</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Generative AI for Everyone</div>
+                                <div class="cert-issuer">DeepLearning.AI</div>
+                                <div class="cert-date">Mar 2024</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>UI/C</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Learning Technologies Foundations and Applications</div>
+                                <div class="cert-issuer">University of Illinois at Urbana-Champaign| Coursera</div>
+                                <div class="cert-date">Apr 2023</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>GAH</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Veri Analizi</div>
+                                <div class="cert-issuer">Global AI Hub</div>
+                                <div class="cert-date">Mar 2022</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>MSU</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Game Design and Development 1: 2D Shooter</div>
+                                <div class="cert-issuer">Michigan State University</div>
+                                <div class="cert-date">Jan 2022</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>GAH</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Hands-on Data Visualization with Python</div>
+                                <div class="cert-issuer">Global AI Hub</div>
+                                <div class="cert-date">Jan 2022</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>CIaA</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Introduction to Game Design</div>
+                                <div class="cert-issuer">California Institute of the Arts</div>
+                                <div class="cert-date">Dec 2021</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>Cr</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Programming for Everybody (Getting Started with Python)</div>
+                                <div class="cert-issuer">Coursera</div>
+                                <div class="cert-date">Nov 2021</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>PK</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Fundamentals of Visual Storytelling</div>
+                                <div class="cert-issuer">Piktochart</div>
+                                <div class="cert-date">Oct 2021</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>edX</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">IBM Python Basics for Data Science</div>
+                                <div class="cert-issuer">edX</div>
+                                <div class="cert-date">Oct 2021</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>edX</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Designing the User Experience (University of Maryland)</div>
+                                <div class="cert-issuer">edX</div>
+                                <div class="cert-date">Sep 2021</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>GAH</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Introduction to AI, Robotics and Data</div>
+                                <div class="cert-issuer">Global AI Hub</div>
+                                <div class="cert-date">Jul 2021</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>IBM</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">IBM Introduction to Artificial Intelligence (AI)</div>
+                                <div class="cert-issuer">IBM Skills Network</div>
+                                <div class="cert-date">Jun 2021</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>edX</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Leaders of Learning (Harvard University)</div>
+                                <div class="cert-issuer">edX</div>
+                                <div class="cert-date">Jun 2021</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>TG</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Makine Öğrenmesi 101</div>
+                                <div class="cert-issuer">Turkcell Geleceği Yazanlar</div>
+                                <div class="cert-date">Mar 2021</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>Ud</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">(40+ Saat) Python | Sıfırdan İleri Seviye Programlama (2020)</div>
+                                <div class="cert-issuer">Udemy</div>
+                                <div class="cert-date">Jan 2021</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>Ud</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Gamification in Teaching & Learning</div>
+                                <div class="cert-issuer">Udemy</div>
+                                <div class="cert-date">Dec 2020</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>BI</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Herkes İçin Yapay Zeka</div>
+                                <div class="cert-issuer">Bilgeİş</div>
+                                <div class="cert-date">Dec 2020</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>TG</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Python Programlama 301</div>
+                                <div class="cert-issuer">Turkcell Geleceği Yazanlar</div>
+                                <div class="cert-date">Aug 2020</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>TG</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Python Programlama 101</div>
+                                <div class="cert-issuer">Turkcell Geleceği Yazanlar</div>
+                                <div class="cert-date">Jul 2020</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>TG</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Python Programlama 201</div>
+                                <div class="cert-issuer">Turkcell Geleceği Yazanlar</div>
+                                <div class="cert-date">Jul 2020</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>Ud</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Tasarım Odaklı Düşünme - Design Thinking Crash Course</div>
+                                <div class="cert-issuer">Udemy</div>
+                                <div class="cert-date">Jun 2020</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>TG</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Veri Bilimi ve Yapay Zekaya Giriş</div>
+                                <div class="cert-issuer">Turkcell Geleceği Yazanlar</div>
+                                <div class="cert-date">Jun 2020</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>TG</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Veri Okuryazarlığı</div>
+                                <div class="cert-issuer">Turkcell Geleceği Yazanlar</div>
+                                <div class="cert-date">Jun 2020</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>Ud</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Educational Game Design ( Bahcesehir University)</div>
+                                <div class="cert-issuer">Udemy</div>
+                                <div class="cert-date">Mar 2020</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>Ud</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Kullanıcı Deneyimi 101</div>
+                                <div class="cert-issuer">Udemy</div>
+                                <div class="cert-date">Oct 2019</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>Ud</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Oyunlaştırma</div>
+                                <div class="cert-issuer">Udemy</div>
+                                <div class="cert-date">Sep 2019</div>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-item">
+                            <div class="cert-logo">
+                                <span>Ud</span>
+                            </div>
+                            <div class="cert-info">
+                                <div class="cert-name">Gamification & Behavioral Design: The Octalysis Framework</div>
+                                <div class="cert-issuer">Udemy</div>
+                                <div class="cert-date">Apr 2019</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Skills Section -->
+                <section class="section">
+                    <h2 class="section-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="12 2 12 22"></polyline>
+                            <polyline points="2 12 22 12"></polyline>
+                        </svg>
+                        Yetenekler
+                    </h2>
+                    <div class="skills-list">
+                        <span class="skill-tag">Generative AI Tools</span>
+                        <span class="skill-tag">Artificial Intelligence (AI)</span>
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Python (Programming Language)</span>
+                        <span class="skill-tag">Gamification</span>
+                        <span class="skill-tag">Educational Technology</span>
+                        <span class="skill-tag">User Experience (UX)</span>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Ayhan Bozkurt. Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
+    
+    <!-- Modal for Contact Info -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>İletişim Bilgileri</h2>
+            <p>Email: info@ayhanbozkurt.com</p>
+            <p>Telefon: +90 312 123 4567</p>
+        </div>
+    </div>
+    
+    <script>
+        // JavaScript for modal functionality
+        const contactBtn = document.getElementById('contactBtn');
+        const contactModal = document.getElementById('contactModal');
+        const closeModal = document.getElementById('closeModal');
+        
+        contactBtn.addEventListener('click', () => {
+            contactModal.style.display = 'flex';
+        });
+        
+        closeModal.addEventListener('click', () => {
+            contactModal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if(e.target === contactModal) {
+                contactModal.style.display = 'none';
+            }
+        });
+        
+        // JavaScript for loader simulation (optional)
+        document.addEventListener('DOMContentLoaded', () => {
+            // Simulate loading delay
+            setTimeout(() => {
+                document.querySelector('.container').classList.remove('fade-in');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
